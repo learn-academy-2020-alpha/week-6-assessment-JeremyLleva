@@ -3,17 +3,17 @@ Answer the following questions. First, without external resources. Challenge you
 
 1. In a model called Animal that has_many Sightings, what is the name of the foreign key? Would the foreign key be part of the Animal model or the Sightings model?
 
-  Your answer:
+  Your answer: The foreign key would be the Animal ID and it would be part of the Sightings model 
 
-  Researched answer:
+  Researched answer: Foreign key is used to cross-reference two tables
 
 
 
 2. Which routes must always be passed params and why?
 
-  Your answer:
+  Your answer: PATCH/PUT and DELETE
 
-  Researched answer:
+  Researched answer: PATCH/PUT and DELETE always need params passed as we would
 
 
 
@@ -21,26 +21,32 @@ Answer the following questions. First, without external resources. Challenge you
 
   Your answer:
 
+  get "game/:guess", to: "main#game" 
+
 
 
 4. Name three rails generator commands. What is created by each?
 
-  Your answer:
+  Your answer: Not Sure
 
   Researched answer:
-
-
+  rails g model 
+  	-Creates a database model
+  rails g controller
+  	-Creates a controller for our MVC model
+  rails g migration
+  	-Creates a migration so we can apply database changes
 
 5. Consider the Rails routes below. Describe the responsibility of each route.
 
-/users        method="GET"   
+/users        method="GET"   	-Show a index of users
 
-/users/1      method="GET"   
+/users/1      method="GET"  	-Show information of one user 
 
-/users/new    method="GET"   
+/users/new    method="GET"   	-Get information to create a user
 
-/users/       method="POST"     
+/users/       method="POST"     -Create information of new user
 
-/users/1      method="PUT"    
+/users/1      method="PUT"    	-Update infromation of a user
 
-/users/1      method="DELETE"
+/users/1      method="DELETE"	-Delete a users infromation
