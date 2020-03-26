@@ -8,21 +8,21 @@
 # 1)
 class BlogPostsController < ApplicationController
   def index
-    # 2)
+    # 2) Shows the user all the blog post
     @posts = BlogPost.all
   end
 
   def show
-    # 3)
+    # 3) Shows a blog post information based on the id passed through the parameters
     @post = BlogPost.find(params[:id])
   end
 
-  # 4)
+  # 4) Creates a new post
   def new
   end
 
   def create
-    # 5)
+    # 5) Creates a blog post based on the params passed
     @post = BlogPost.create(blog_post_params)
     if @post.valid?
       redirect_to @post
@@ -36,15 +36,15 @@ class BlogPostsController < ApplicationController
     if @post.destroy
       redirect_to blog_posts_path
     else
-      # 6)
+      # 6) 
       redirect_to blog_post_path(@post)
     end
   end
 
-  # 7)
+  # 7) Creating strong parameters to protect our data
   private
   def blog_post_params
-    # 8)
+    # 8) A blog post requires a title and content
     params.require(:blog_post).permit(:title, :content)
   end
 
@@ -53,8 +53,8 @@ end
 
 # app/models/blog_post.rb
 
-# 9)
+# 9) Our blogpost model showing us that we can have mutiple comments per post
 class BlogPost < ApplicationRecord
-  # 10)
+  # 10) Each blog post can have mutiple comments associated with it
   has_many :comments
 end
